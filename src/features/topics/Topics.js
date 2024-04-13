@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 
 export default function Topics() {
   const topics = useSelector((state) => state.topics);
-  // const topic = useSelector((state) => state.topics.topics);
+  const topic = useSelector((state) => state.topics.topics);
 
-  // console.log("topic:", topic);
-  // console.log("topics:", topics);
+  console.log("topic:", topic);
+  console.log("topics:", topics);
 
   return (
     <section className="center">
