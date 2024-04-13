@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
-import topicsReducer, { topicsSlice, topics, selectTopics } from "./topicsSlice";
 import { useSelector } from "react-redux";
 
 export default function Topics() {
-  const topics = useSelector(selectTopics);
-  // console.log(topics);  
+  const topics = useSelector((state) => state.topics);
+  // const topic = useSelector((state) => state.topics.topics);
 
-  // const x = Object.values(topics).map((topic) => topic);
-  // console.log(x);
+  // console.log("topic:", topic);
+  // console.log("topics:", topics);
 
   return (
     <section className="center">
@@ -22,8 +21,7 @@ export default function Topics() {
                 <img src={topic.icon} alt="" />
                 <div className="text-content">
                   <h2>{topic.name}</h2>
-                  <p>{topic.quizIds.length} Quizzes</p> 
-                
+                  <p>{topic.quizIds.length} Quizzes</p>
                 </div>
               </div>
             </Link>
