@@ -4,12 +4,7 @@ import ROUTES from "../../app/routes";
 import { useSelector } from "react-redux";
 
 export default function Topics() {
-  const topics = useSelector((state) => state.topics);
-  const topic = useSelector((state) => state.topics.topics);
-
-  console.log("topic:", topic);
-  console.log("topics:", topics);
-
+  const topics = useSelector((state) => state.topics.topics);
   return (
     <section className="center">
       <h1>Topics</h1>

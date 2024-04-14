@@ -1,26 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  topics: {
-    id: "12345",
-    name: "deneme",
-    icon: "icon url",
-    quizIds: [],    
-  }
-};
-
 const topicsSlice = createSlice({
   name: "topics",
-  initialState,
-  reducer: {
+  initialState: {
+    topics: {},
+  },
+  reducers: {
     addTopic: (state, action) => {
       const { id, name, icon } = action.payload;
-      state.topics.topics[id].push({
-        id: id,
-        name: name,
-        icon: icon,
+      state.topics[id] = {
+        id,
+        name,
+        icon,
         quizIds: [],
-      });
+      };
     },
   },
 });

@@ -8,20 +8,17 @@ import { addTopic } from "../features/topics/topicsSlice";
 
 export default function NewTopicForm() {
   const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length === 0) {
-      return;
-    }
-
     dispatch(addTopic({ 
-      id: uuidv4, //()
-      name: name, 
-      icon: icon, 
+      id: uuidv4(), 
+      name, 
+      icon 
     }));
     navigate(ROUTES.topicsRoute());
   };
@@ -53,7 +50,11 @@ export default function NewTopicForm() {
             ))}
           </select>
         </div>
-        <button className="center disabled" type="submit" disabled={name.length === 0 || icon.length === 0} >
+        <button
+          className="center disabled"
+          type="submit"
+          disabled={name.length === 0 || icon.length === 0}
+        >
           Add Topic
         </button>
       </form>
