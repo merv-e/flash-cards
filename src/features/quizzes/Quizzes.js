@@ -6,7 +6,6 @@ import ROUTES from "../../app/routes";
 export default function Quizzes() {
   const quizzes = useSelector(state => state.quizzes.quizzes);
 
-  console.log(quizzes);
 
   return (
     <section className="center">
