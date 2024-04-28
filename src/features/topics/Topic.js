@@ -5,7 +5,7 @@ import ROUTES from "../../app/routes";
 
 export default function Topic() {
   const topics = useSelector((state) => state.topics.topics);  
-  const quizzes = {}; // replace with selector
+  const quizzes = useSelector(state => state.quizzes.quizzes);
   const { topicId } = useParams();
   const topic = topics[topicId];
 
