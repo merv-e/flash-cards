@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
 
 export default function Quizzes() {
-  const quizzes = useSelector(state => state.quizzes.quizzes);
-
+  const quizzes = useSelector((state) => state.quizzes.quizzes);
 
   return (
     <section className="center">

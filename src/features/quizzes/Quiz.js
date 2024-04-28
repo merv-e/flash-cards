@@ -6,7 +6,7 @@ import ROUTES from "../../app/routes";
 // import quiz selector
 
 export default function Quiz() {
-  const quizzes = useSelector(state => state.quizzes.quizzes); // replace this with a call to your selector to get all the quizzes in state
+  const quizzes = useSelector(state => state.quizzes.quizzes); 
   const { quizId } = useParams();
   const quiz = quizzes[quizId];
 
