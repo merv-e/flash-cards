@@ -3,17 +3,15 @@ import { useSelector } from "react-redux";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Card from "../cards/Card";
 import ROUTES from "../../app/routes";
-// import quiz selector
 
 export default function Quiz() {
-  const quizzes = useSelector(state => state.quizzes.quizzes); 
+  const quizzes = useSelector((state) => state.quizzes.quizzes);
   const { quizId } = useParams();
   const quiz = quizzes[quizId];
 
-  if(!quiz) {
-    return <Navigate to={ROUTES.quizzesRoute()} replace/>
+  if (!quiz) {
+    return <Navigate to={ROUTES.quizzesRoute()} replace />;
   }
-
 
   return (
     <section>
@@ -23,7 +21,7 @@ export default function Quiz() {
           <Card key={id} id={id} />
         ))}
       </ul>
-      <Link to={ROUTES.newQuizRoute()} className="button center" >
+      <Link to={ROUTES.newQuizRoute()} className="button center">
         Create a New Quiz
       </Link>
     </section>
